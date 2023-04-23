@@ -35,9 +35,14 @@ app.get("/json", (request, response)=>{
    
 })
 
-
-
-
+// 8
+app.get('/now', function(req, res, next) {
+  req.time = new Date().toString();
+  next();
+}, function(req, res) {
+  let output = {time: req.time}
+  res.json(output)
+});
 
 
 
