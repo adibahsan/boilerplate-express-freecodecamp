@@ -10,7 +10,11 @@ console.log("Hello World")
 // })
 
 
-
+// 7
+app.use(function(req, res, next) {
+    console.log(`${req.method} ${req.path} - ${req.ip}`);
+    next();
+  })
 // 3
 app.get("/", function(req,res){
     console.log(__dirname)
@@ -30,6 +34,10 @@ app.get("/json", (request, response)=>{
   } else response.json(obj)
    
 })
+
+
+
+
 
 
 
