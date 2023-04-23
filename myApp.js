@@ -44,6 +44,10 @@ app.get('/now', function(req, res, next) {
   res.json(output)
 });
 
+// 9
+app.get("/:word/echo", (req, resp) =>{
+  resp.json({echo: req.params.word})
+})
 
 
 
