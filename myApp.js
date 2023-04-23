@@ -20,7 +20,16 @@ app.get("/", function(req,res){
 
 app.use("/public",express.static(__dirname + "/public"))
 
-
+// 5 & 6
+app.get("/json", (request, response)=>{
+  const mySecret = process.env['MESSAGE_STYLE']
+  var obj = {"message": "Hello json"}
+  var upperObj = {"message": "HELLO JSON"}
+  if(mySecret == "uppercase"){
+     response.json(upperObj)
+  } else response.json(obj)
+   
+})
 
 
 
